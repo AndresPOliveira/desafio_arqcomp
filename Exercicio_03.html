@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    <h1>Decidindo se irei ao McDonnalds</h1>
+    <p>Está Chovendo?</p>
+    <select id="sel_chuva">
+        <option value="1">SIM</option>
+        <option value="0">NÃO</option>
+    </select>
+    <p>Tenho dinheiro?</p>
+    <select id="sel_dinheiro">
+        <option value="1">SIM</option>
+        <option value="0">NÃO</option>
+    </select>
+    <p>Tenho Tempo ?</p>
+    <select id="sel_tempo">
+        <option value="1">SIM</option>
+        <option value="0">NÃO</option>
+    </select>
+    <p>Gosto de Nuggets?</p>
+    <select id="sel_nuggets">
+        <option value="1">SIM</option>
+        <option value="0">NÃO</option>
+    </select>
+    <br><br>
+    <button onclick="validar()">Eai Vamos?</button>
+</body>
+</html>
+<script>
+    function validar() {
+        var c = sel_chuva.value;
+        var d = sel_dinheiro.value;
+        var t = sel_tempo.value;
+        var n = sel_nuggets.value;
+
+       /* !A!BC!D)+(!A!BCD)+(!ABCD)+(A!BCD)+(ABCD)*/
+
+        if (
+            c == 0 && d == 0 && t == 1 && n == 1 ||
+            c == 0 && d == 0 && t == 0 && n == 1 ||
+            c == 0 && d == 1 && t == 1 && n == 1 ||
+            c == 1 && d == 0 && t == 1 && n == 1 ||
+            c == 1 && d == 1 && t == 1 && n == 1
+         ) {
+            alert(`Bora comer um Méqui!!`)
+            
+        } else{
+            alert(`Hojê não ta muito atrativo para um méqui.`)
+        }
+        
+    }
+</script>
